@@ -1,0 +1,21 @@
+{
+    "version": 1,
+    "rules": [
+        {
+            "domain": [
+                "chat.openai.com",
+                "www.chat.openai.com",
+                "notion.so",
+                "www.notion.so",
+                "youtube.com",
+                "www.youtube.com",
+                "chatgpt.com",
+                "www.chatgpt.com"
+            ],
+            "domain_suffix": [
+                "googlevideo.com",
+                "chatgpt.com"
+            ]
+        }
+    ]
+}
