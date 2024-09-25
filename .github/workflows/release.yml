@@ -25,7 +25,7 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       with:
-        tag_name: "release-${{ github.event.head_commit.timestamp | toJSON | fromjson | replace('T', '-') | replace(':', '') | replace('+', '') | replace('.', '') }}"
+        tag_name: "release-${{ github.sha }}"
         release_name: ${{ github.event.head_commit.timestamp }}
         draft: false
         prerelease: false
@@ -48,11 +48,17 @@ jobs:
         asset_path: ./foxglow.json
         asset_name: foxglow.json
         asset_content_type: application/json
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Upload foxglow.srs
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./foxglow.srs
+        asset_name: foxglow.srs
+        asset_content_type: application/octet-stream
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         asset_name: foxglow.srs
         asset_content_type: application/octet-stream
