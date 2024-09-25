@@ -25,11 +25,19 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       with:
-        tag_name: latest
+        tag_name: "release-${{ github.event.head_commit.timestamp }}"
         release_name: ${{ github.event.head_commit.timestamp }}
         draft: false
         prerelease: false
         generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Move the latest tag
+      run: |
+        git fetch --tags
+        git tag -f latest ${{ github.sha }}
+        git push origin -f latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
