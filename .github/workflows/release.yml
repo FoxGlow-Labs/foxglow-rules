@@ -25,7 +25,7 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       with:
-        tag_name: "release-${{ github.event.head_commit.timestamp }}"
+        tag_name: "release-${{ github.event.head_commit.timestamp | toJSON | fromjson | replace('T', '-') | replace(':', '') | replace('+', '') | replace('.', '') }}"
         release_name: ${{ github.event.head_commit.timestamp }}
         draft: false
         prerelease: false
