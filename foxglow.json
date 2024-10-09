@@ -14,7 +14,9 @@
             ],
             "domain_suffix": [
                 "googlevideo.com",
-                "chatgpt.com"
+                "chatgpt.com",
+                "openai.com",
+                "youtube.com"
             ]
         }
     ]
