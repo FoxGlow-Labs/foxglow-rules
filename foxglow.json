@@ -10,13 +10,25 @@
                 "youtube.com",
                 "www.youtube.com",
                 "chatgpt.com",
-                "www.chatgpt.com"
+                "www.chatgpt.com",
+                "twitter.com",
+                "x.com",
+                "www.furaffinity.net",
+                "furaffinity.net",
+                "e621.net",
+                "patreon.com"
             ],
             "domain_suffix": [
                 "googlevideo.com",
                 "chatgpt.com",
+                "notion.so",
                 "openai.com",
-                "youtube.com"
+                "youtube.com",
+                "twitter.com",
+                "x.com",
+                "furaffinity.net",
+                "e621.net",
+                "patreon.com"
             ]
         }
     ]
